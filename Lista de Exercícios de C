@@ -1,0 +1,247 @@
+//Verificar se um Número é Par ou Ímpar
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    if (numero % 2 == 0) {
+        printf("O número é par.\n");
+    } else {
+        printf("O número é ímpar.\n");
+    }
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+
+
+//Calcular a Soma de Números de 1 a N
+
+#include <stdio.h>
+
+int main() {
+    int N, soma = 0;
+    printf("Digite um número N: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        soma += i;
+    }
+
+    printf("A soma dos números de 1 a %d é %d.\n", N, soma);
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+//Verificar se um Número é Primo
+
+#include <stdio.h>
+#include <stdbool.h>
+
+bool ehPrimo(int num) {
+    if (num <= 1) return false;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    int numero;
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    if (ehPrimo(numero)) {
+        printf("O número é primo.\n");
+    } else {
+        printf("O número não é primo.\n");
+    }
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+//Imprimir a Tabela de Multiplicação
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", numero, i, numero * i);
+    }
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+//Inverter uma String
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], strInvertida[100];
+    int len, j;
+
+    printf("Digite uma string: ");
+    fgets(str, sizeof(str), stdin);
+
+    len = strlen(str) - 1; // Subtrai 1 para ignorar o '\n'
+    str[len] = '\0'; // Remove o '\n' do final da string
+
+    for (int i = 0; i < strlen(str); i++) {
+        strInvertida[i] = str[len - i - 1];
+    }
+    strInvertida[strlen(str)] = '\0';
+
+    printf("String invertida: %s\n", strInvertida);
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+//Calcular o Fatorial de um Número
+
+#include <stdio.h>
+
+int fatorial(int n) {
+    if (n <= 1) return 1;
+    return n * fatorial(n - 1);
+}
+
+int main() {
+    int numero;
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    printf("O fatorial de %d é %d.\n", numero, fatorial(numero));
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+//Encontrar o Maior e o Menor Elemento de um Array
+
+#include <stdio.h>
+
+int main() {
+    int arr[10], i;
+    int maior, menor;
+
+    printf("Digite 10 números inteiros:\n");
+    for (i = 0; i < 10; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    maior = menor = arr[0];
+    for (i = 1; i < 10; i++) {
+        if (arr[i] > maior) maior = arr[i];
+        if (arr[i] < menor) menor = arr[i];
+    }
+
+    printf("O maior número é %d.\n", maior);
+    printf("O menor número é %d.\n", menor);
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+//Ordenar um Array de Números em Ordem Crescente 
+
+#include <stdio.h>
+
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int arr[10];
+
+    printf("Digite 10 números inteiros:\n");
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    bubbleSort(arr, 10);
+
+    printf("Array ordenado:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+//Converter Temperatura de Celsius para Fahrenheit
+
+#include <stdio.h>
+
+int main() {
+    float celsius, fahrenheit;
+    printf("Digite a temperatura em Celsius: ");
+    scanf("%f", &celsius);
+
+    fahrenheit = (celsius * 9/5) + 32;
+
+    printf("A temperatura em Fahrenheit é %.2f.\n", fahrenheit);
+
+    return 0;
+}
+
+////////////////////////////////////////////
+
+//Contar o Número de Vogais em uma String
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[100];
+    int count = 0;
+
+    printf("Digite uma string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for (int i = 0; i < strlen(str); i++) {
+        char c = tolower(str[i]);
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            count++;
+        }
+    }
+
+    printf("Número de vogais: %d\n", count);
+
+    return 0;
+}
+
+
+
+
