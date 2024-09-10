@@ -99,9 +99,8 @@ int main() {
     printf("Escreva uma palavra: ");
     fgets(str, sizeof(str), stdin);
 
-    len = strlen(str) - 1; // Subtrai 1 para ignorar o '\n'
-    str[len] = '\0'; // Remove o '\n' do final da string
-
+    len = strlen(str) - 1; 
+    str[len] = '\0'; 
     for (int i = 0; i < strlen(str); i++) {
         strInvertida[i] = str[len - i - 1];
     }
