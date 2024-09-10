@@ -4,7 +4,7 @@
 
 int main() {
     int numero;
-    printf("Digite um número: ");
+    printf("Digite o numero ");
     scanf("%d", &numero);
 
     if (numero % 2 == 0) {
@@ -26,14 +26,14 @@ int main() {
 
 int main() {
     int N, soma = 0;
-    printf("Digite um número N: ");
+    printf("Digite o valor de N: ");
     scanf("%d", &N);
 
     for (int i = 1; i <= N; i++) {
         soma += i;
     }
 
-    printf("A soma dos números de 1 a %d é %d.\n", N, soma);
+    printf("A soma dos valores de 1 a %d é %d.\n", N, soma);
 
     return 0;
 }
@@ -55,13 +55,13 @@ bool ehPrimo(int num) {
 
 int main() {
     int numero;
-    printf("Digite um número: ");
+    printf("Digite o numero ");
     scanf("%d", &numero);
 
     if (ehPrimo(numero)) {
-        printf("O número é primo.\n");
+        printf("O numero é primo.\n");
     } else {
-        printf("O número não é primo.\n");
+        printf("O numero não é primo.\n");
     }
 
     return 0;
@@ -75,7 +75,7 @@ int main() {
 
 int main() {
     int numero;
-    printf("Digite um número: ");
+    printf("Digite o numero: ");
     scanf("%d", &numero);
 
     for (int i = 1; i <= 10; i++) {
@@ -96,7 +96,7 @@ int main() {
     char str[100], strInvertida[100];
     int len, j;
 
-    printf("Digite uma string: ");
+    printf("Escreva uma palavra: ");
     fgets(str, sizeof(str), stdin);
 
     len = strlen(str) - 1; // Subtrai 1 para ignorar o '\n'
@@ -125,7 +125,7 @@ int fatorial(int n) {
 
 int main() {
     int numero;
-    printf("Digite um número: ");
+    printf("Digite o numero: ");
     scanf("%d", &numero);
 
     printf("O fatorial de %d é %d.\n", numero, fatorial(numero));
@@ -143,7 +143,7 @@ int main() {
     int arr[10], i;
     int maior, menor;
 
-    printf("Digite 10 números inteiros:\n");
+    printf("Insira o valor de 10 numeros:\n");
     for (i = 0; i < 10; i++) {
         scanf("%d", &arr[i]);
     }
@@ -181,7 +181,7 @@ void bubbleSort(int arr[], int n) {
 int main() {
     int arr[10];
 
-    printf("Digite 10 números inteiros:\n");
+    printf("Insira o valor de 10 numeros\n");
     for (int i = 0; i < 10; i++) {
         scanf("%d", &arr[i]);
     }
@@ -205,7 +205,7 @@ int main() {
 
 int main() {
     float celsius, fahrenheit;
-    printf("Digite a temperatura em Celsius: ");
+    printf("Digite a temperatura em graus Celsius: ");
     scanf("%f", &celsius);
 
     fahrenheit = (celsius * 9/5) + 32;
@@ -227,7 +227,7 @@ int main() {
     char str[100];
     int count = 0;
 
-    printf("Digite uma string: ");
+    printf("Escreva uma palavra: ");
     fgets(str, sizeof(str), stdin);
 
     for (int i = 0; i < strlen(str); i++) {
